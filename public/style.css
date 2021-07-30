@@ -199,3 +199,77 @@ label {
 h2 {
   color: #2800FF;
 }
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  width: 17%
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+input[type=text]#inputTituloNoticia, #inputLinkNoticia, #inputLinkImgNoticia{
+  margin-left: 10%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  width: 80%;
+}
+button#btnAtualizarNoticia{
+  width: 75%;
+  margin-top: 2%;
+  background-color: rgb(171, 234, 245);
+}
+button#btnCancelarAtualizarNoticia{
+  width: 25%;
+  margin-top: 2%;
+  background-color: rgb(245, 142, 135);
+}
+button#btnDeletarNoticia{
+  width: 75%;
+  margin-top: 2%;
+  background-color: rgb(245, 142, 135);
+}
+button#btnCancelarDeletarNoticia{
+  width: 25%;
+  margin-top: 2%;
+  background-color: rgb(171, 234, 245);
+}
+button#criarNoticiaBtn{
+  margin-top: 5px;
+  background-color: rgb(171, 234, 245);
+}
+button#signOutBtn{
+  background-color: rgb(245, 142, 135);
+}
+textarea{
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  resize: none;
+  font-family: inherit;
+  font-size: 100%;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+select{
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-family: inherit;
+  font-size: 100%;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
