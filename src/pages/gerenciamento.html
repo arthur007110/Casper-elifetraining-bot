@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Painel de Gerência Casper Bot</title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+    
+    
+  </head>
+  <body>
+    
+    <div style="position: relative">
+      <button id="signOutBtn" style="width: 100%">Deslogar</button>
+      <button id="criarNoticiaBtn" style="width: 100%" onClick="criarNoticia()">Criar Noticia</button>
+
+      <table style="position: absolute" id="noticiasTable">
+        <tr>
+          <th>Titulo</th>
+          <th>Descrição</th>
+          <th>Tema</th>
+          <th>Link da Noticia</th>
+          <th>Link da Imagem</th>
+          <th>Ações</th>
+        </tr>
+      </table>
+
+      <div id="divAtualizarNoticia" style="width: 50%; background-color: rgba(200, 200, 250, 0.95); position: fixed; z-index: 10; margin-left: 25%; margin-top: 1%;-webkit-border-top-left-radius: 25px;-webkit-border-top-right-radius: 25px;-moz-border-radius-topleft: 25px;-moz-border-radius-topright: 25px;border-top-left-radius: 25px;border-top-right-radius: 25px;" hidden>
+        <h2 id="textoAtualizarNoticia" style="text-align: center; color: black">
+          Atualizar Noticia
+        </h2>
+        <input type="text" placeholder="Titulo" id="inputTituloNoticia">
+        <textarea id="inputDescricaoNoticia" rows="5" placeholder="Descricao"></textarea>
+        <select id="inputTipoNoticia">
+            <option value="Esportes">Esportes</option>
+            <option value="Politica">Politica</option>
+            <option value="Entretenimento">Entretenimento</option>
+            <option value="Famosos">Famosos</option>
+        </select>
+        <input type="text" placeholder="Link da Noticia" id="inputLinkNoticia">
+        <input type="text" placeholder="Link da Imagem" id="inputLinkImgNoticia">
+        <button id="btnCancelarAtualizarNoticia" onClick="cancelarAcao()">X</button><button id="btnAtualizarNoticia" onClick="confirmarAtualizarNoticia()">Atualizar</button>
+      </div>
+      <div id="divDeletarNoticia" style="width: 50%; background-color: rgba(250, 200, 200, 0.95); position: fixed; z-index: 10; margin-left: 25%; margin-top: 10%;-webkit-border-top-left-radius: 25px;-webkit-border-top-right-radius: 25px;-moz-border-radius-topleft: 25px;-moz-border-radius-topright: 25px;border-top-left-radius: 25px;border-top-right-radius: 25px;" hidden>
+        <h2 style="text-align: center; color: black">
+          Deletar Noticia
+        </h2>
+        <p style="text-align: center; color: black">
+          O registro não pode ser recuperado após a ação ser concretizada
+        </p>
+        <button id="btnCancelarDeletarNoticia" onClick="cancelarAcao()">X</button><button id="btnDeletarNoticia" onClick="confirmarDeletarNoticia()">Deletar</button>
+      </div>
+    </div>
+    
+    
+    
+  </body>
+  <!-- Logica do site -->
+  <script src="/gerenciamento.js"></script>
+</html>
