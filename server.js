@@ -79,7 +79,7 @@ app.post("/webhook", (request, response) => {
       //response.json({"fulfillmentText": "Você Escolheu: " + tipoNoticia});
       
       let ref = admin.database().ref("noticias");
-      let query = ref.orderByChild("tema").equalTo(tipoNoticia).limitToFirst(10);
+      let query = ref.orderByChild("tema").equalTo(tipoNoticia).limitToLast(10);
 
       query.once('value',function(snap) {
         let noticias = [];
@@ -88,6 +88,8 @@ app.post("/webhook", (request, response) => {
             var itemVal = item.val();
             noticias.push(itemVal);
         });
+        
+        noticias = noticias.reverse();
         
         let noticiasGenericModels = [];
         
