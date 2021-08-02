@@ -50,6 +50,8 @@ function updateTable(){
         noticias.push(itemVal);
     });
     
+    noticias = noticias.reverse();
+    
     noticias.forEach(function(noticia){
       let linhaNoticia = document.createElement("tr");
       
